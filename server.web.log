@@ -1,0 +1,58 @@
+2024-10-02T18:52:14.369 - [org.alexdev.http.HavanaWeb] - HavanaWeb by Quackster
+2024-10-02T18:52:14.370 - [org.alexdev.http.HavanaWeb] - Loading configuration..
+2024-10-02T18:52:14.374 - [org.alexdev.havana.dao.Storage] - Connecting to MySQL server
+2024-10-02T18:52:14.392 - [com.zaxxer.hikari.HikariDataSource] - processing - Starting...
+2024-10-02T18:52:14.513 - [com.zaxxer.hikari.pool.HikariPool] - processing - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: GSS-API authentication exception
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:232)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:165)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1199)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:560)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:174)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:92)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at org.alexdev.havana.dao.Storage.<init>(Storage.java:51)
+	at org.alexdev.havana.dao.Storage.connect(Storage.java:72)
+	at org.alexdev.http.HavanaWeb.main(HavanaWeb.java:68)
+Caused by: java.sql.SQLException: GSS-API authentication exception
+	at org.mariadb.jdbc.internal.com.send.gssapi.StandardGssapiAuthentication.authenticate(StandardGssapiAuthentication.java:163)
+	at org.mariadb.jdbc.internal.com.send.SendGssApiAuthPacket.send(SendGssApiAuthPacket.java:110)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authentication(AbstractConnectProtocol.java:918)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.handleConnectionPhases(AbstractConnectProtocol.java:850)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connect(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1195)
+	... 13 more
+Caused by: javax.security.auth.login.LoginException: Unable to obtain Principal Name for authentication 
+	at jdk.security.auth/com.sun.security.auth.module.Krb5LoginModule.promptForName(Krb5LoginModule.java:820)
+	at jdk.security.auth/com.sun.security.auth.module.Krb5LoginModule.attemptAuthentication(Krb5LoginModule.java:693)
+	at jdk.security.auth/com.sun.security.auth.module.Krb5LoginModule.login(Krb5LoginModule.java:601)
+	at java.base/javax.security.auth.login.LoginContext.invoke(LoginContext.java:754)
+	at java.base/javax.security.auth.login.LoginContext$4.run(LoginContext.java:678)
+	at java.base/javax.security.auth.login.LoginContext$4.run(LoginContext.java:676)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.base/javax.security.auth.login.LoginContext.invokePriv(LoginContext.java:676)
+	at java.base/javax.security.auth.login.LoginContext.login(LoginContext.java:587)
+	at org.mariadb.jdbc.internal.com.send.gssapi.StandardGssapiAuthentication.authenticate(StandardGssapiAuthentication.java:112)
+	... 18 more
+2024-10-02T18:53:02.070 - [org.alexdev.http.HavanaWeb] - HavanaWeb by Quackster
+2024-10-02T18:53:02.070 - [org.alexdev.http.HavanaWeb] - Loading configuration..
+2024-10-02T18:53:02.076 - [org.alexdev.havana.dao.Storage] - Connecting to MySQL server
+2024-10-02T18:53:02.095 - [com.zaxxer.hikari.HikariDataSource] - processing - Starting...
+2024-10-02T18:53:02.160 - [com.zaxxer.hikari.HikariDataSource] - processing - Start completed.
+2024-10-02T18:53:02.253 - [org.alexdev.http.HavanaWeb] - Registering web routes..
+2024-10-02T18:53:02.306 - [org.alexdev.http.HavanaWeb] - Registered 253 route(s)!
+2024-10-02T18:53:02.306 - [org.alexdev.http.HavanaWeb] - Starting http service on port 8080
+2024-10-02T18:57:01.606 - [org.alexdev.http.HavanaWeb] - HavanaWeb by Quackster
+2024-10-02T18:57:01.607 - [org.alexdev.http.HavanaWeb] - Loading configuration..
+2024-10-02T18:57:01.611 - [org.alexdev.havana.dao.Storage] - Connecting to MySQL server
+2024-10-02T18:57:01.627 - [com.zaxxer.hikari.HikariDataSource] - processing - Starting...
+2024-10-02T18:57:01.688 - [com.zaxxer.hikari.HikariDataSource] - processing - Start completed.
+2024-10-02T18:57:01.781 - [org.alexdev.http.HavanaWeb] - Registering web routes..
+2024-10-02T18:57:01.832 - [org.alexdev.http.HavanaWeb] - Registered 253 route(s)!
+2024-10-02T18:57:01.833 - [org.alexdev.http.HavanaWeb] - Starting http service on port 8080

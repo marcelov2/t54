@@ -1,0 +1,5 @@
+# Dockerfile-Web
+FROM openjdk:11-jre
+COPY ./Havana-Web.jar /app/Havana-Web.jar
+WORKDIR /app
+CMD ["java", "-jar", "Havana-Web.jar"]
